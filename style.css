@@ -1,0 +1,106 @@
+/* Typography and Colors [cite: 20, 21] */
+:root {
+    --primary-color: #2d5a27;
+    --accent-color: #f4b400;
+    --text-light: #ffffff;
+    --text-dark: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif; /* Custom Google Font  */
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+/* Fixed Navigation Bar [cite: 13] */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--text-light);
+    z-index: 1000;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Full-width Hero Section [cite: 12] */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url(https://img.freepik.com/premium-photo/precision-farming-equipment-working-synchronized-harmony-across-vast-fields_1007506-7182.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--text-light);
+}
+
+/* Button with Hover and Active States [cite: 16, 22] */
+.cta-btn {
+    padding: 12px 30px;
+    font-size: 1rem;
+    background-color: var(--accent-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.cta-btn:hover {
+    background-color: #d49a00; /* Hover state [cite: 16] */
+    transform: scale(1.05);
+}
+
+.cta-btn:active {
+    background-color: #b38200; /* Active state [cite: 16] */
+    transform: scale(0.95);
+}
+
+/* Two-column Section using Flexbox [cite: 14, 19] */
+.info-section {
+    display: flex;
+    padding: 60px 10%;
+    gap: 40px;
+}
+
+.column {
+    flex: 1;
+}
+
+/* Responsive Media Query [cite: 8, 14, 23] */
+/* Becomes one column on screens < 700px */
+@media (max-width: 700px) {
+    .info-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        display: none; /* Simplifies mobile view */
+    }
+}
